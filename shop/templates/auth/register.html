@@ -1,0 +1,25 @@
+{% extends 'app_layout.html' %}
+
+
+{% block main %}
+<!--    <form action="/register/" method="post">
+        login: <input name="username"/><br/>
+        imie: <input name="first_name"/><br/>
+        nazwisko: <input name="last_name"/><br/>
+        email: <input name="email"/><br/>
+        haslo: <input name="passwd"/><br/>
+        potwierdzenie hasla: <input name="passwd_reply"/><br/>
+        <input type="submit" value="zarejestruj"/>
+    </form>
+    -->
+<hr/>
+Form z RegisterForm<br/>
+
+
+
+<form action="/register/" method="post">
+{{ form.as_table }}
+<input type="submit" value="zarejestruj"/>
+</form>
+
+{% endblock %}

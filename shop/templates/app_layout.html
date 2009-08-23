@@ -1,0 +1,19 @@
+Naglowek
+<hr/>
+<h3>Menu</h3>
+<ul>
+    <a href="/products/">produkty</a>
+    <a href="/register/">rejestracja</a>
+    {% if user.is_anonymous %}
+        <a href="/login/">logowanie</a>
+    {% else %}
+        <a href="/logout/">wyloguj</a> | <a href="/card/">koszyk</a>
+    {% endif %}
+</ul>
+<hr/>
+<div main="">
+    {% block main %}
+    {% endblock %}
+</main>
+<hr/>
+stopka

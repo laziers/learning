@@ -1,0 +1,16 @@
+{% extends 'app_layout.html' %}
+
+{% block main %}
+    {% include 'product/submenu.html' %}
+    
+    {% if message %}
+        <h3>{{ message }}</h3>
+    {% endif %}
+    
+    <form action="/{{ action }}-product/{{ id }}" method="post">
+        Name: <input name="name" value="{{ product.name }}"/><br/>
+        Price: <input name="price" value="{{ product.price }}"/><br/>
+        <input type="submit" value="{{ button }}"
+    </form>
+    
+{% endblock %}

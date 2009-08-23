@@ -1,0 +1,19 @@
+{% extends 'app_layout.html' %}
+
+{% block main %}
+
+    {% include 'product/submenu.html' %}
+
+    {% if message %}
+        {{ message }}
+    {% endif %}
+
+    {% if client_products %}
+        {% for product in client_products %}
+            <h1>{{ product.name }}</h1>
+            <p>{{ product.price }}</p>
+        {% endfor %}
+    {% else %}
+        jeszcze nic nie dodales do koszyka
+    {% endif %}
+{% endblock %}

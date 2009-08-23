@@ -1,0 +1,11 @@
+{% extends 'app_layout.html' %}
+
+
+{% block main %}
+
+    <form action="/login/" method="post">
+        {{ form.as_table }}
+        <input type="submit" value="zaloguj"/>
+    </form>
+
+{% endblock %}

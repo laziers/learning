@@ -1,0 +1,23 @@
+{% extends 'app_layout.html' %}
+
+{% block main %}
+
+    {% include 'product/submenu.html' %}
+    
+    {% if message %}
+        <h1>{{ message }}</h1>
+    {% endif %}
+
+    {% for product in object_list %}
+        <h1>{{ product.name }}</h1>
+        <p>{{ product.price }}</p>
+        {% if user.is_authenticated %}
+            <p>
+                <a href="/edit-product/{{ product.id }}">edytuj</a> | 
+                <a href="/delete-product/{{ product.id }}">usun</a> |
+                <a href="/add-to-card/{{ product.id }}">dodaj do koszyka</a>
+            </p>
+        {% endif %}
+    {% endfor %}
+
+{% endblock %}
